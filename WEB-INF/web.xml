@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  
+	<servlet>
+		<servlet-name>AnnonceServlet</servlet-name>
+		<servlet-class>com.immobilier.controllers.AnnonceServlet</servlet-class>
+		<multipart-config>
+            <location>C:\Users\takha\temp</location> <!-- A adapter chez vous -->
+            <max-file-size>10485760</max-file-size> <!-- 10 Mo -->
+            <max-request-size>52428800</max-request-size> <!-- 5 x 10 Mo -->
+            <file-size-threshold>1048576</file-size-threshold> <!-- 1 Mo -->
+        </multipart-config>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>AnnonceurServlet</servlet-name>
+		<servlet-class>com.immobilier.controllers.AnnonceurServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>AnnonceDetailServlet</servlet-name>
+		<servlet-class>com.immobilier.controllers.AnnonceDetailServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>HomeServlet</servlet-name>
+		<servlet-class>com.immobilier.controllers.HomeServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>AnnoncesServlet</servlet-name>
+		<servlet-class>com.immobilier.controllers.AnnoncesServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.immobilier.controllers.LoginServlet</servlet-class>
+	</servlet>
+	
+	
+	<servlet-mapping>
+		<servlet-name>AnnonceDetailServlet</servlet-name>
+		<url-pattern>/annonce-detail</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>AnnoncesServlet</servlet-name>
+		<url-pattern>/annonces</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>HomeServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>AnnonceServlet</servlet-name>
+		<url-pattern>/annonce</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>AnnonceurServlet</servlet-name>
+		<url-pattern>/annonceur</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
+		</jsp-property-group>
+	</jsp-config>
+  
+</web-app>
